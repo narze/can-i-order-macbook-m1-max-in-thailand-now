@@ -1,14 +1,24 @@
 import puppeteer from "puppeteer"
+import * as fs from "fs"
 ;(async () => {
-  const browser = await puppeteer.launch({ headless: true })
+  const browser = await puppeteer.launch()
   const page = await browser.newPage()
-
-  await page.goto(
-    "https://www.apple.com/th/shop/buy-mac/macbook-pro/%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-14-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7",
-    { waitUntil: "networkidle2" }
+  await page.setUserAgent(
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36 Edg/95.0.1020.38"
   )
+  // await page.setViewport({
+  //   width: 800,
+  //   height: 2000,
+  // })
+  // await page.setDefaultNavigationTimeout(0)
 
-  // Wait for suggest overlay to appear and click "show all results".
+  await page.goto("https://www.apple.com/th/shop/buy-mac/macbook-pro", {
+    waitUntil: "networkidle2",
+  })
+
+  // console.log("page loaded")
+  // await page.screenshot({ path: "apple.png" })
+  // console.log("screenshot taken")
 
   await page.waitForSelector(
     ".shipdeliverydates .as-purchaseinfo-dudeinfo-deliverymsg"
@@ -26,8 +36,10 @@ import puppeteer from "puppeteer"
   if (result[4].includes("ไม่พร้อม")) {
     // NO
     console.log("NO")
+    fs.writeFileSync("README.md", "<center><h1>NO</h1></center>")
   } else {
     console.log("YES!!!")
+    fs.writeFileSync("README.md", "<center><h1>YES</h1></center>")
   }
 
   await browser.close()
