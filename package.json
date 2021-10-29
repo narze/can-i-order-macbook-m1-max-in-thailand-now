@@ -1,0 +1,15 @@
+{
+  "name": "can-i-order-macbook-m1-max-in-thailand-now",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/narze/can-i-order-macbook-m1-max-in-thailand-now",
+  "author": "Manassarn Manoonchai <manassarn@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "puppeteer": "^10.4.0"
+  },
+  "type": "module"
+}
