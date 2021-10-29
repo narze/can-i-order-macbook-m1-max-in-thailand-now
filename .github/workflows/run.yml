@@ -5,7 +5,7 @@ name: Node.js CI
 
 on:
   schedule:
-    - cron: "42 * * * *"
+    - cron: '42 * * * *'
   push:
     branches: [main]
   pull_request:
@@ -21,13 +21,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16.x
-          cache: "yarn"
+          cache: 'yarn'
       - run: yarn
-      - run: yarn start
+      - run: yarn apicheck
       - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version.
         with:
-          add: "README.md"
+          add: 'README.md'
           author_name: narze's bot
           author_email: notbarze@users.noreply.github.com
-          message: "Update README.md"
+          message: 'Update README.md'
           push: true
