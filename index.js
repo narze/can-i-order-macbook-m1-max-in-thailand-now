@@ -36,10 +36,16 @@ import * as fs from "fs"
   if (result[4].includes("ไม่พร้อม")) {
     // NO
     console.log("NO")
-    fs.writeFileSync("README.md", "<center><h1>NO</h1></center>")
+    fs.writeFileSync(
+      "README.md",
+      `<center><h1>NO</h1></center>\n\nUpdated at ${new Date().toLocaleString()}`
+    )
   } else {
     console.log("YES!!!")
-    fs.writeFileSync("README.md", "<center><h1>YES</h1></center>")
+    fs.writeFileSync(
+      "README.md",
+      `<center><h1>YES</h1></center>\n\nUpdated at ${new Date().toLocaleString()}`
+    )
   }
 
   await browser.close()
