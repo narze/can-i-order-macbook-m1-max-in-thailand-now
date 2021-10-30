@@ -6,10 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Can I order macbook M1 MAX in Thailand now?</title>
     <script src="https://cdn-tailwindcss.vercel.app/"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['SF Pro TH', 'SF Pro Display'],
+            },
+          },
+        },
+      }
+    </script>
     <style>
-      .text-so-big {
-        font-size: 40rem;
-        line-height: 1;
+      @font-face {
+        font-family: 'SF Pro TH';
+        src: url('./assets/fonts/SFProTH.woff2');
+      }
+      @font-face {
+        font-family: 'SF Pro Display';
+        font-weight: 600;
+        src: url('./assets/fonts/sf-pro-display_semibold.woff2');
+      }
+      @font-face {
+        font-family: 'SF Pro Display';
+        font-weight: 400;
+        src: url('./assets/fonts/sf-pro-display_regular.woff2');
       }
       ::-webkit-scrollbar {
         width: 0;
@@ -17,12 +38,42 @@
     </style>
   </head>
   <body>
-    <div class="grid h-screen place-items-center">
-      <div class="m">
-        <div class="text-md text-center font-mono">Can I order macbook M1 MAX in Thailand now?</div>
-        <div class="answer text-[25rem] md:text-[35rem] lg:text-[40rem] leading-none text-center font-mono font-bold">
-          ...
-        </div>
+    <div class="flex flex-col items-center justify-center h-screen place-items-center font-sans">
+      <div class="text-center text-black font-semibold text-5xl">M1 MAX in TH now?</div>
+      <div
+        class="
+          answer
+          text-[10rem]
+          sm:text-[20rem]
+          md:text-[30rem]
+          lg:text-[35rem]
+          leading-none
+          text-center
+          font-semibold
+        "
+      >
+        ...
+      </div>
+      <div class="cta hidden w-1/2 lg:w-1/3">
+        <a
+          href="https://www.apple.com/th/shop/buy-mac/macbook-pro/%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99-14-%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7"
+          class="
+            bg-gray-300
+            px-3
+            py-2
+            inline-block
+            text-center
+            w-full
+            from-[#42a1ec]
+            to-[#0070c9]
+            bg-gradient-to-b
+            text-white
+            border-[#07c] border
+            rounded-[4px]
+          "
+        >
+          ลุย!!!
+        </a>
       </div>
     </div>
     <div class="absolute bottom-0 right-0 p-4 text-gray-500">
@@ -45,10 +96,11 @@
       )
       const textData = await rawData.text()
       const filteredData = await textData.split('\n').filter((d) => /(?:<center><h1>(NO|YES)<\/h1><\/center>)/.test(d))
+      // document.querySelector('.answer').innerHTML = 'YES'
       document.querySelector('.answer').innerHTML = filteredData
-      document
-        .querySelector('.answer')
-        .classList.add(document.querySelector('.answer').textContent === 'YES' ? 'text-green-700' : 'text-red-700')
+      const status = document.querySelector('.answer').textContent
+      document.querySelector('.answer').classList.add(status === 'YES' ? 'text-green-600' : 'text-red-600')
+      if (status === 'YES') document.querySelector('.cta').classList.remove('hidden')
     }
 
     FetchData()
