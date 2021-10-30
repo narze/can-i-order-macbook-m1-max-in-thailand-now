@@ -6,9 +6,11 @@
   "author": "Manassarn Manoonchai <manassarn@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "apicheck": "node apiChecking.js"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "puppeteer": "^10.4.0"
   },
   "type": "module"
