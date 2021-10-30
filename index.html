@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can I order macbook M1 MAX in Thailand now?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .text-so-big {
+            font-size: 40rem;
+            line-height: 1;
+        }
+        ::-webkit-scrollbar { width: 0 }
+    </style>
+</head>
+<body>
+    <div class="grid h-screen place-items-center">
+        <div class="m">
+            <div class="text-md text-center font-mono">
+                Can I order macbook M1 MAX in Thailand now?
+            </div>
+            <div class="answer text-so-big text-center font-mono font-bold">
+                ...
+            </div>
+        </div>
+    </div>
+    <div class="absolute bottom-0 right-0 p-4 text-gray-500">
+       <a href="https://github.com/narze/can-i-order-macbook-m1-max-in-thailand-now">Github</a>
+    </div>
+</body>
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+kofiWidgetOverlay.draw('narze', {
+  'type': 'floating-chat',
+  'floating-chat.donateButton.text': 'Support me',
+  'floating-chat.donateButton.background-color': '#d9534f',
+  'floating-chat.donateButton.text-color': '#fff'
+});
+</script>
+<script>
+async function FetchData() {
+    const rawData = await fetch('https://raw.githubusercontent.com/narze/can-i-order-macbook-m1-max-in-thailand-now/main/README.md');
+    const textData = await rawData.text();
+    const filteredData = await textData.split('\n').filter((d) => /(?:<center><h1>(NO|YES)<\/h1><\/center>)/.test(d));
+    document.querySelector('.answer').innerHTML = filteredData;
+}
+
+FetchData();
+</script>
+</html>
