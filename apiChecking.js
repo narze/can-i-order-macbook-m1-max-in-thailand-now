@@ -22,7 +22,7 @@ const MODEL_PARTS = [
 ]
 
 ;(async () => {
-  const isBuyNow = false
+  let isBuyNow = false
   const isBuyableLists = {}
 
   for (const PART of MODEL_PARTS.slice(0, 100)) {
